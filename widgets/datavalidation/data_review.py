@@ -69,7 +69,7 @@ class DataReviewer:
         file_path: str = None,
         data_frame: pd.DataFrame = pd.DataFrame(),
         date_frequency: str = "weekly",
-        review_output_dir: str = "review_output",
+        review_output_dir: str = "Data_Validation",
     ) -> None:
         """
         :param dep_var:

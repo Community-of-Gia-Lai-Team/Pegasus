@@ -22,6 +22,7 @@ def widget_discovery(discovery):
         "Orange.widgets.evaluate",
         "Orange.widgets.unsupervised",
         "Orange.widgets.datavalidation",
+        "Orange.widgets.MMM",
     ]
     for pkg in pkgs:
         discovery.handle_category(category_from_package_globals(pkg))

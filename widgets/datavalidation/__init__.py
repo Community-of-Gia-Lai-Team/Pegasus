@@ -12,6 +12,6 @@ loading, importing, saving, preprocessing, selection, etc.
 
 ICON = "icons/Preprocess.svg"
 
-BACKGROUND = "#FFD39F"
+BACKGROUND = "#B7FF9F"
 
 PRIORITY = 7
