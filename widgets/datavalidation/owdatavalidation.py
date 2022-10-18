@@ -31,8 +31,7 @@ from Orange.data.storage import Storage
 from Orange.data.table import Table
 from Orange.data.sql.table import SqlTable
 from Orange.statistics import basic_stats
-# kh
-# from Orange.data.data_review import DataReviewer
+# kJJ from Orange.data.data_review import DataReviewer
 from Orange.widgets.datavalidation.data_review import DataReviewer
 
 
@@ -52,7 +51,7 @@ from Orange.widgets.utils.annotated_data import (create_annotated_table,
 from Orange.widgets.utils.itemmodels import TableModel
 from Orange.widgets.utils.state_summary import format_summary_details
 
-# kh
+# kJJ
 from Orange.widgets.data import owfile
 
 class RichTableModel(TableModel):
@@ -227,35 +226,11 @@ class OWDataTable(OWWidget):
         self.info_text = gui.widgetLabel(info_box)
         self._set_input_summary(None)
 
-
-        # box = gui.vBox(self.controlArea, "Checking Type")
-        # self.c_show_attribute_labels = gui.checkBox(
-        #     box, self, "show_attribute_labels",
-        #     "Show variable labels (if present)",
-        #     callback=self._on_show_variable_labels_changed)
-
-        # self.c_show_attribute_labels = gui.checkBox(box, self, "show_distributions",
-        #              'Visualize numeric values',
-        #              callback=self._on_distribution_color_changed)
-        # gui.checkBox(box, self, "color_by_class", 'Color by instance classes',
-        #              callback=self._on_distribution_color_changed)
-
-        # box = gui.vBox(self.controlArea, "Selection")
-
-        # gui.checkBox(box, self, "select_rows", "Select full rows",
-        #              callback=self._on_select_rows_changed)
-
         gui.rubber(self.controlArea)
 
+        #KJJ button 'data validation'
         gui.button(self.buttonsArea, self, "Data Validation",
                     callback=self._robyn_data_validation)
-
-        # gui.button(self.buttonsArea, self, "Restore Original Order",
-        #            callback=self.restore_order,
-        #            tooltip="Show rows in the original order",
-        #            autoDefault=False,
-        #            attribute=Qt.WA_LayoutUsesWidgetRect)
-        # gui.auto_send(self.buttonsArea, self, "auto_commit")
 
         # GUI with tabs
         self.tabs = gui.tabWidget(self.mainArea)
@@ -646,7 +621,7 @@ class OWDataTable(OWWidget):
         tab = self.tabs.currentWidget()
         if tab:
             tab.reset()
-
+    #KJJ start
     def _robyn_data_validation(self):
         
         PROJECT_ROOT = Path(__file__).resolve().parent
@@ -660,7 +635,7 @@ class OWDataTable(OWWidget):
         data_validation = DataReviewer(paid_media_vars=media_vars, paid_media_spends=media_vars, extra_vars=extra_vars, dep_var=dependent_var, file_path=DATA_PATH, date_frequency=vars["date_frequency"])
         data_validation.run_review()
         QMessageBox.about(self, "Data Validation", "Success")
-
+    #KJJ end
     def _on_select_rows_changed(self):
         for slot in self._inputs:
             selection_model = slot.view.selectionModel()
