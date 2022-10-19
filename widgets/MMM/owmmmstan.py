@@ -31,8 +31,7 @@ from Orange.data.storage import Storage
 from Orange.data.table import Table
 from Orange.data.sql.table import SqlTable
 from Orange.statistics import basic_stats
-# kh
-# from Orange.data.data_review import DataReviewer
+#KJJ from Orange.data.data_review import DataReviewer
 from Orange.widgets.datavalidation.data_review import DataReviewer
 
 
@@ -52,7 +51,7 @@ from Orange.widgets.utils.annotated_data import (create_annotated_table,
 from Orange.widgets.utils.itemmodels import TableModel
 from Orange.widgets.utils.state_summary import format_summary_details
 
-# kh
+#KJJ
 from Orange.widgets.data import owfile
 
 class RichTableModel(TableModel):
@@ -576,7 +575,7 @@ class OWDataTable(OWWidget):
 
         text.append("")
 
-        # kh
+        #KJJ
         print("*********************************")
         print("********** owdatavalidation.py, FILE_PATH => ", owfile.FILE_PATH)
         print("*********************************")
@@ -1196,6 +1195,7 @@ class OWDataTable(OWWidget):
         ], axis=1)
         roas1y_df.to_csv(os.path.join(output_dir, "roasly_df.csv"), index=False)
         QMessageBox.about(self, "Data Validation", "Success")
+    #KJJ end
 
     def _on_select_rows_changed(self):
         for slot in self._inputs:
