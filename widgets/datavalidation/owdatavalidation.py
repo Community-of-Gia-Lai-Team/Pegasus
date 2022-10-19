@@ -550,7 +550,7 @@ class OWDataTable(OWWidget):
 
         text.append("")
 
-        # kh
+        # kJJ
         print("*********************************")
         print("********** owdatavalidation.py, FILE_PATH => ", owfile.FILE_PATH)
         print("*********************************")
