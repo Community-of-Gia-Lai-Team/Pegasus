@@ -247,6 +247,7 @@ class OWDataTable(OWWidget):
 
         gui.rubber(self.controlArea)
 
+        #KJJ
         gui.button(self.buttonsArea, self, "MMM Stan",
                     callback=self._mmm_stan_model)
 
@@ -647,6 +648,7 @@ class OWDataTable(OWWidget):
         if tab:
             tab.reset()
 
+    #KJJ start
     def _mmm_stan_model(self):
         import warnings
         warnings.filterwarnings("ignore")
