@@ -31,7 +31,7 @@ from Orange.data.storage import Storage
 from Orange.data.table import Table
 from Orange.data.sql.table import SqlTable
 from Orange.statistics import basic_stats
-# kJJ from Orange.data.data_review import DataReviewer
+# Eric from Orange.data.data_review import DataReviewer
 from Orange.widgets.datavalidation.data_review import DataReviewer
 
 
@@ -51,7 +51,7 @@ from Orange.widgets.utils.annotated_data import (create_annotated_table,
 from Orange.widgets.utils.itemmodels import TableModel
 from Orange.widgets.utils.state_summary import format_summary_details
 
-# kJJ
+# Eric
 from Orange.widgets.data import owfile
 
 class RichTableModel(TableModel):
@@ -228,7 +228,7 @@ class OWDataTable(OWWidget):
 
         gui.rubber(self.controlArea)
 
-        #KJJ button 'data validation'
+        #Eric button 'data validation'
         gui.button(self.buttonsArea, self, "Data Validation",
                     callback=self._robyn_data_validation)
 
@@ -550,7 +550,7 @@ class OWDataTable(OWWidget):
 
         text.append("")
 
-        # kh
+        # Eric
         print("*********************************")
         print("********** owdatavalidation.py, FILE_PATH => ", owfile.FILE_PATH)
         print("*********************************")
@@ -621,7 +621,7 @@ class OWDataTable(OWWidget):
         tab = self.tabs.currentWidget()
         if tab:
             tab.reset()
-    #KJJ start
+    #Eric start
     def _robyn_data_validation(self):
         
         PROJECT_ROOT = Path(__file__).resolve().parent
@@ -635,7 +635,7 @@ class OWDataTable(OWWidget):
         data_validation = DataReviewer(paid_media_vars=media_vars, paid_media_spends=media_vars, extra_vars=extra_vars, dep_var=dependent_var, file_path=DATA_PATH, date_frequency=vars["date_frequency"])
         data_validation.run_review()
         QMessageBox.about(self, "Data Validation", "Success")
-    #KJJ end
+    #Eric end
     def _on_select_rows_changed(self):
         for slot in self._inputs:
             selection_model = slot.view.selectionModel()
